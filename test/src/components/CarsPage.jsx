@@ -6,11 +6,24 @@ import style from './CarsPage.module.css';
 const CarsPage = (props) => {
     return (
         <div className={style.carsPageContainer}>
-            <input className={style.searchBlock} placeholder='search' size='20'
-                   onChange={ (e) =>
-                       props.onChangeFilter(e.currentTarget.value)
-                   }
-            />
+            <div className={style.searchBlock}>
+                <input className={style.manufacturerSearch} placeholder='brand' size='20'
+                       onChange={ (e) =>
+                           props.onChangeFilter(e.currentTarget.value)
+                       }
+                />
+                <input className={style.brandSearch} placeholder='model' size='20'
+                       // onChange={ (e) =>
+                       //     props.onChangeFilter(e.currentTarget.value)
+                       // }
+                />
+                <input className={style.priceSearch} placeholder='price' size='20'
+                       // onChange={ (e) =>
+                       //     props.onChangeFilter(e.currentTarget.value)
+                       // }
+                />
+            </div>
+
             {props.carsList.map( (car) => {
                 return (
                     <div className={style.carBlock}>
@@ -18,11 +31,11 @@ const CarsPage = (props) => {
                             <img className={style.carPicture} src={car.imgURL} alt="car"/>
                         </div>
                         <div className={style.carBrandBlock}>
-                            <div className={style.carManufacturer}>
-                                {car.manufacturer}
-                            </div>
                             <div className={style.carBrand}>
                                 {car.brand}
+                            </div>
+                            <div className={style.carModel}>
+                                {car.model}
                             </div>
                         </div>
                         <div className={style.carsSpecificationsBlock}>

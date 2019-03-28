@@ -8,12 +8,20 @@
 }
 
 .searchBlock{
-    height: 2rem;
-    width: 25rem;
-    font-family: "Adobe Hebrew", serif;
-    font-size: 1rem;
+    display: flex;
+    align-items: center;
     margin-bottom: 2rem;
     margin-top: 2rem;
+}
+
+.manufacturerSearch,
+.brandSearch,
+.priceSearch{
+    height: 2rem;
+    width: 15rem;
+    font-family: "Adobe Hebrew", serif;
+    font-size: 1rem;
+    margin-left: 2rem;
 }
 
 .carBlock{
@@ -21,12 +29,12 @@
     width: 100%;
     display: grid;
     grid-template-rows:     minmax(auto, 100%);
-    grid-template-columns:  minmax(auto, 45%)
-                            minmax(auto, 25%)
-                            minmax(auto, 15%)
+    grid-template-columns:  minmax(auto, 35%)
+                            minmax(auto, 30%)
+                            minmax(auto, 20%)
                             minmax(auto, 15%);
     background: white;
-    border: 0.05rem solid gray;
+    border: 0.05rem solid #8080802b;
 }
 
 .carPictureBlock{
@@ -53,8 +61,8 @@
     justify-content: center;
     align-items: center;
 }
-.carManufacturer,
-.carBrand{
+.carBrand,
+.carModel{
     font-family: "Arial Narrow";
     font-size: 2rem;
     color: grey;

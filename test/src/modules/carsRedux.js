@@ -8,8 +8,8 @@ const initialState = {
     carsList: [
         {
             id: '1',
-            manufacturer: 'Toyota',
-            brand: 'Corolla',
+            brand: 'Toyota',
+            model: 'Corolla',
             year:  '1995 г',
             imgURL: 'https://s.auto.drom.ru/i24212/s/photos/14991/14990504/gen220wb_226472771.jpg',
             price: '110 000 p.',
@@ -20,8 +20,8 @@ const initialState = {
         },
         {
             id: '2',
-            manufacturer: 'Toyota',
-            brand: 'Camry',
+            brand: 'Toyota',
+            model: 'Camry',
             year:  '2006 г',
             imgURL: 'https://s.auto.drom.ru/i24216/s/photos/18370/18369121/gen220wb_252445797.jpg',
             price: '720 000 p.',
@@ -32,8 +32,8 @@ const initialState = {
         },
         {
             id: '3',
-            manufacturer: 'Toyota',
-            brand: 'Land Cruiser',
+            brand: 'Toyota',
+            model: 'Land Cruiser',
             year:  '2001 г',
             imgURL: 'https://s.auto.drom.ru/4/sales/photos/14676/14675440/gen220wb_124206253.jpg',
             price: '1 100 000 p.',
@@ -44,8 +44,8 @@ const initialState = {
         },
         {
             id: '4',
-            manufacturer: 'Volkswagen',
-            brand: 'Passat',
+            brand: 'Volkswagen',
+            model: 'Passat',
             year:  '2008 г',
             imgURL: 'https://s.auto.drom.ru/i24231/s/photos/32873/32872405/gen600_358012480.jpg',
             price: '455 000 p.',
@@ -56,8 +56,8 @@ const initialState = {
         },
         {
             id: '5',
-            manufacturer: 'Volkswagen',
-            brand: 'Amarok',
+            brand: 'Volkswagen',
+            model: 'Amarok',
             year:  '2011 г',
             imgURL: 'https://s.auto.drom.ru/i24203/s/photos/24063/24062275/gen220wb_188847501.jpg',
             price: '999 000 p.',
@@ -68,8 +68,8 @@ const initialState = {
         },
         {
             id: '6',
-            manufacturer: 'Volkswagen',
-            brand: 'Tiguan',
+            brand: 'Volkswagen',
+            model: 'Tiguan',
             year:  '2014 г',
             imgURL: 'https://s.auto.drom.ru/i24209/s/photos/22611/22610741/gen220wb_209142778.jpg',
             price: '700 000 p.',
@@ -80,8 +80,8 @@ const initialState = {
         },
         {
             id: '7',
-            manufacturer: 'Nissan',
-            brand: 'Note',
+            brand: 'Nissan',
+            model: 'Note',
             year:  '2011 г',
             imgURL: 'https://s.auto.drom.ru/i24219/s/photos/21176/21175975/gen220wb_272498707.jpg',
             price: '410 000 p.',
@@ -92,8 +92,8 @@ const initialState = {
         },
         {
             id: '8',
-            manufacturer: 'Nissan',
-            brand: 'Teana',
+            brand: 'Nissan',
+            model: 'Teana',
             year:  '2011 г',
             imgURL: 'https://s.auto.drom.ru/i24220/s/photos/19876/19875939/gen220wb_284041203.jpg',
             price: '770 000 p.',
@@ -104,8 +104,8 @@ const initialState = {
         },
         {
             id: '9',
-            manufacturer: 'Nissan',
-            brand: 'Sunny',
+            brand: 'Nissan',
+            model: 'Sunny',
             year:  '2001 г',
             imgURL: 'https://s.auto.drom.ru/5/sales/photos/18659/18658311/gen220wb_154185722.jpg',
             price: '90 000 p.',
@@ -116,8 +116,8 @@ const initialState = {
         },
         {
             id: '10',
-            manufacturer: 'Nissan',
-            brand: 'X-Trail',
+            brand: 'Nissan',
+            model: 'X-Trail',
             year:  '2012 г',
             imgURL: 'https://s.auto.drom.ru/i24192/s/photos/20504/20503963/gen220wb_159105096.jpg',
             price: '900 000 p.',
@@ -151,13 +151,13 @@ export const reducer = (state = initialState, action) => {
 
 //---- Selector -----------//
 
-export const getCarsFilteredByManufacturerSubstring = (globalState, substring) => {
+export const getCarsFilteredBybrandSubstring = (globalState, substring) => {
 
     let filteredData = globalState.carsPage.carsList;
 
     if(substring !== null){
         filteredData = globalState.carsPage.carsList.filter((item) => {
-            return item.manufacturer.toLowerCase().indexOf(substring) > -1;
+            return item.brand.toLowerCase().indexOf(substring) > -1;
         });
     }
 

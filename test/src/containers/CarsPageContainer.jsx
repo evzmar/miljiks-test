@@ -1,7 +1,7 @@
 import React from 'react';
 import CarsPage from "../components/CarsPage";
 import connect from "react-redux/es/connect/connect";
-import {actions as action, getCarsFilteredByManufacturerSubstring} from "../modules/carsRedux";
+import {actions as action, getCarsFilteredBybrandSubstring} from "../modules/carsRedux";
 
 
 const CarsPageContainer = (props) => {
@@ -10,7 +10,7 @@ const CarsPageContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        carsList:      getCarsFilteredByManufacturerSubstring(state, state.carsPage.filterSubstring),
+        carsList:      getCarsFilteredBybrandSubstring(state, state.carsPage.filterSubstring),
         // carsList: state.carsPage.carsList
     }
 };
