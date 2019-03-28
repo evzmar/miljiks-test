@@ -7,9 +7,9 @@ const CarsPage = (props) => {
     return (
         <div className={style.carsPageContainer}>
             <input className={style.searchBlock} placeholder='search' size='20'
-                   // onChange={ (e) =>
-                   //     props.onChangeFilter(e.currentTarget.value)
-                   // }
+                   onChange={ (e) =>
+                       props.onChangeFilter(e.currentTarget.value)
+                   }
             />
             {props.carsList.map( (car) => {
                 return (

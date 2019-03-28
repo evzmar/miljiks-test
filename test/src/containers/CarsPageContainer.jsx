@@ -1,6 +1,7 @@
 import React from 'react';
 import CarsPage from "../components/CarsPage";
 import connect from "react-redux/es/connect/connect";
+import {actions as action, getCarsFilteredByManufacturerSubstring} from "../modules/carsRedux";
 
 
 const CarsPageContainer = (props) => {
@@ -9,13 +10,16 @@ const CarsPageContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        carsList: state.carsPage.carsList
+        carsList:      getCarsFilteredByManufacturerSubstring(state, state.carsPage.filterSubstring),
+        // carsList: state.carsPage.carsList
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        onChangeFilter: (substring) => {
+            dispatch(action.setFilterSubstring(substring))
+        }
     }
 };
 

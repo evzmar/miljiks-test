@@ -1,5 +1,5 @@
 export const types = {
-    // GET_DESCRIPTION_PRODUCT:   'TESTS/PRODUCTS_PAGE/GET_DESCRIPTION_PRODUCT'
+    SET_FILTER_SUBSTRING:       'TEST/CARS_PAGE/SET_FILTER_SUBSTRING'
 };
 
 
@@ -126,24 +126,40 @@ const initialState = {
             drive: 'передний',
             enginePower: '2.0 л'
         }
-    ]
+    ],
+    filterSubstring: null
 };
 
 //---- actionCreators--------//
 export const actions = {
-    // getDescriptionProduct:   ()        => ({type: types.GET_DESCRIPTION_PRODUCT})
+    setFilterSubstring:    (substring)   => ({type: types.SET_FILTER_SUBSTRING, substring})
 };
 
 //----
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        // case types.GET_DESCRIPTION_PRODUCT:
-        //     return {
-        //         ...state,
-        //         isDispalyed: true
-        //     };
+        case types.SET_FILTER_SUBSTRING:
+            return {
+                ...state,
+                filterSubstring: action.substring
+            };
 
         default:
             return state;
     }
+};
+
+//---- Selector -----------//
+
+export const getCarsFilteredByManufacturerSubstring = (globalState, substring) => {
+
+    let filteredData = globalState.carsPage.carsList;
+
+    if(substring !== null){
+        filteredData = globalState.carsPage.carsList.filter((item) => {
+            return item.manufacturer.toLowerCase().indexOf(substring) > -1;
+        });
+    }
+
+    return filteredData;
 };
