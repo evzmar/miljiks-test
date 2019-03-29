@@ -1,25 +1,27 @@
 import React from 'react';
-import CarsPage from "../components/CarsPage";
+import CarsPageComponent from "../components/CarsPageComponent/CarsPageComponent";
 import connect from "react-redux/es/connect/connect";
-import {actions as action, getCarsFilteredBybrandSubstring} from "../modules/carsRedux";
+import {actions as action, getCarsFilteredSubstring} from "../modules/carsRedux";
 
 
 const CarsPageContainer = (props) => {
-    return <CarsPage {...props}/>
+    return <CarsPageComponent {...props}/>
 };
 
 const mapStateToProps = (state) => {
     return {
-        carsList:      getCarsFilteredBybrandSubstring(state, state.carsPage.filterSubstring),
-        // carsList: state.carsPage.carsList
+        carsList:      getCarsFilteredSubstring(state, state.carsPage.filterSubstringBrand, state.carsPage.filterSubstringModel)
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onChangeFilter: (substring) => {
-            dispatch(action.setFilterSubstring(substring))
-        }
+        onChangeFilterBrand: (substring) => {
+            dispatch(action.setFilterSubstringBrand(substring))
+        },
+        onChangeFilterModel: (substring) => {
+            dispatch(action.setFilterSubstringModel(substring))
+        },
     }
 };
 

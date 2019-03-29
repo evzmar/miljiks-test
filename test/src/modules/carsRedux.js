@@ -1,5 +1,6 @@
 export const types = {
-    SET_FILTER_SUBSTRING:       'TEST/CARS_PAGE/SET_FILTER_SUBSTRING'
+    SET_FILTER_SUBSTRING_BRAND:       'TEST/CARS_PAGE/SET_FILTER_SUBSTRING_BRAND',
+    SET_FILTER_SUBSTRING_MODEL:       'TEST/CARS_PAGE/SET_FILTER_SUBSTRING_MODEL'
 };
 
 
@@ -127,21 +128,28 @@ const initialState = {
             enginePower: '2.0 л'
         }
     ],
-    filterSubstring: null
+    filterSubstringBrand: null,
+    filterSubstringModel: null
 };
 
 //---- actionCreators--------//
 export const actions = {
-    setFilterSubstring:    (substring)   => ({type: types.SET_FILTER_SUBSTRING, substring})
+    setFilterSubstringBrand:    (substring)   => ({type: types.SET_FILTER_SUBSTRING_BRAND, substring}),
+    setFilterSubstringModel:    (substring)   => ({type: types.SET_FILTER_SUBSTRING_MODEL, substring})
 };
 
 //----
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case types.SET_FILTER_SUBSTRING:
+        case types.SET_FILTER_SUBSTRING_BRAND:
             return {
                 ...state,
-                filterSubstring: action.substring
+                filterSubstringBrand: action.substring
+            };
+        case types.SET_FILTER_SUBSTRING_MODEL:
+            return {
+                ...state,
+                filterSubstringModel: action.substring
             };
 
         default:
@@ -151,15 +159,22 @@ export const reducer = (state = initialState, action) => {
 
 //---- Selector -----------//
 
-export const getCarsFilteredBybrandSubstring = (globalState, substring) => {
+export const getCarsFilteredSubstring = (globalState, filterSubstringBrand, filterSubstringModel) => {
 
     let filteredData = globalState.carsPage.carsList;
 
-    if(substring !== null){
+    if(filterSubstringBrand !== null){
         filteredData = globalState.carsPage.carsList.filter((item) => {
-            return item.brand.toLowerCase().indexOf(substring) > -1;
+            return item.brand.toLowerCase().indexOf(filterSubstringBrand) > -1;
         });
     }
+    if (filterSubstringModel !== null) {
+        filteredData = globalState.carsPage.carsList.filter((item) => {
+            return item.model.toLowerCase().indexOf(filterSubstringModel) > -1;
+        });
+    }
+
+
 
     return filteredData;
 };
