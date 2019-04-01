@@ -62,10 +62,9 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(action.setCreatingPrice(price))
         },
 
-        // onAddCarButtonClick: () => {
-        //     debugger
-        //     dispatch(action.addCar())
-        // },
+        onAddCarButtonClick: (guid) => {
+            dispatch(action.addCar(guid))
+        },
     }
 };
 

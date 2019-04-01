@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './CarsPageComponent.module.css';
 import CarComponent from "../CarComponent/CarComponent";
+import generateGuid from "../../utils/guds";
 
 
 const CarsPageComponent = (props) => {
@@ -42,7 +43,7 @@ const CarsPageComponent = (props) => {
             })}
             <button className={style.addСarButton}
                     onClick={ (e) => {
-                      props.onAddCarButtonClick()
+                      props.onAddCarButtonClick(generateGuid())
             }}>
                 add
             </button>
