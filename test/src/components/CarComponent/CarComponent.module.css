@@ -102,3 +102,8 @@
     color: white;
     cursor: pointer;
 }
+
+.carPictureInput{
+    grid-column: 1;
+    grid-row:    1;
+}

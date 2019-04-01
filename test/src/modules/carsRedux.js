@@ -15,6 +15,7 @@ export const types = {
     SET_CREATING_PRICE:               'TEST/CARS_PAGE/SET_CREATING_PRICE',
     COPY_CAR_DESCRIPTION_TO_CREATING_CAR_DESCRIPTION: 'TEST/CARS_PAGE/COPY_CAR_DESCRIPTION_TO_CREATING_CAR_DESCRIPTION',
     SET_CAR_DESCRIPTION:              'TEST/CARS_PAGE/SET_CAR_DESCRIPTION',
+    SET_USER_PIC_URL:                 'TEST/CARS_PAGE/SET_USER_PIC_URL',
     ADD_CAR:                          'TEST/CARS_PAGE/ADD_CAR'
 };
 
@@ -197,7 +198,8 @@ export const actions = {
 
     copyCarDescriptionToCreatingCarDescription: (guid) => ({type: types.COPY_CAR_DESCRIPTION_TO_CREATING_CAR_DESCRIPTION, guid}),
     setCarDescription:        (guid, carDescription)  => ({type: types.SET_CAR_DESCRIPTION, guid, carDescription}),
-    addCar:                   (guid)                  => ({type: types.ADD_CAR, guid})
+    setUserPicUrl:            (imgUrl)          => ({type: types.SET_USER_PIC_URL, imgUrl}),
+    addCar:                   (guid)            => ({type: types.ADD_CAR, guid})
 };
 
 //----
@@ -296,6 +298,12 @@ export const reducer = (state = initialState, action) => {
           cars[0].carDescription = action.carDescription;
           return newState;
         }
+
+        case types.SET_USER_PIC_URL:
+             {
+                 newState.imgURL = action.imgUrl;
+                 return newState;
+            }
 
         case types.ADD_CAR:
 

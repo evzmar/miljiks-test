@@ -37,6 +37,7 @@ const CarsPageComponent = (props) => {
                                  onChangeCreatingEngine={props.onChangeCreatingEngine}
                                  onChangeCreatingPower={props.onChangeCreatingPower}
                                  onChangeCreatingPrice={props.onChangeCreatingPrice}
+                                 onUserpicChange={props.onUserpicChange}
 
                    />
                 )

@@ -65,6 +65,9 @@ const mapDispatchToProps = (dispatch) => {
         onAddCarButtonClick: (guid) => {
             dispatch(action.addCar(guid))
         },
+        onUserpicChange: (imgUrl) => {
+            dispatch(action.setUserPicUrl(imgUrl))
+        }
     }
 };
 

@@ -10,6 +10,10 @@ const CarComponent = (props) => {
             <div className={style.carPictureBlock}>
                 <img className={style.carPicture} src={props.carItem.carDescription.imgURL} alt="carDescription"/>
             </div>
+            <input type="file"  className={style.carPictureInput}
+                   onChange={(e) => {
+                       props.onUserpicChange(e.target.files[0])
+                   }}/>
             <div className={style.carBrandBlock}>
                 <div className={style.carBrand}>
                     {props.carItem.carDescription.brand}
@@ -135,10 +139,6 @@ const CarComponent = (props) => {
                         }>
                     ok
                 </button>}
-                {/*</div>*/}
-                {/*<div className={style.carPrice}>*/}
-                {/*{props.carItem.price}*/}
-                {/*</div>*/}
             </div>
         </div>
 
