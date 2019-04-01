@@ -14,7 +14,7 @@
     margin-top: 2rem;
 }
 
-.manufacturerSearch,
+.modelSearch,
 .brandSearch,
 .priceSearch{
     height: 2rem;
@@ -24,75 +24,15 @@
     margin-left: 2rem;
 }
 
-.carBlock{
-    height: 20rem;
-    width: 100%;
-    display: grid;
-    grid-template-rows:     minmax(auto, 100%);
-    grid-template-columns:  minmax(auto, 35%)
-                            minmax(auto, 30%)
-                            minmax(auto, 20%)
-                            minmax(auto, 15%);
-    background: white;
-    border: 0.05rem solid #8080802b;
-}
-
-.carPictureBlock{
-    grid-column: 1;
-    grid-row:    1;
+.addСarButton{
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.carPicture{
-    height: 15rem;
-    width: 20rem;
-    background-size: contain;
-    overflow: hidden;
-    background: white;
-}
-
-.carBrandBlock{
-    grid-column: 2;
-    grid-row:    1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.carBrand,
-.carModel{
+    height: 2rem;
+    width: 10rem;
     font-family: "Arial Narrow";
-    font-size: 2rem;
-    color: grey;
-}
-
-.carsSpecificationsBlock{
-    grid-column: 3;
-    grid-row:    1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.yearOfIssue,
-.carsMileage,
-.carsDrive,
-.carsEngine,
-.carsEnginePower{
-    font-family: "Arial Narrow";
-    font-size: 1.3rem;
-    color: grey;
-}
-
-.carPrice{
-    grid-column: 4;
-    grid-row:    1;
-    display: flex;
-    margin: auto;
-    font-family: "Arial Narrow";
-    font-size: 2rem;
-    color: black;
+    font-size: 1.5rem;
+    background: brown;
+    color: white;
+    cursor: pointer;
 }

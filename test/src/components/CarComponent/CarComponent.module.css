@@ -1,0 +1,104 @@
+.carBlock{
+    height: 20rem;
+    width: 100%;
+    display: grid;
+    grid-template-rows:     minmax(auto, 100%);
+    grid-template-columns:  minmax(auto, 35%)
+                            minmax(auto, 15%)
+                            minmax(auto, 1fr);
+    background: white;
+    border: 0.05rem solid #8080802b;
+}
+
+.carPictureBlock{
+    grid-column: 1;
+    grid-row:    1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carPicture{
+    height: 15rem;
+    width: 20rem;
+    background-size: contain;
+    overflow: hidden;
+    background: white;
+}
+
+.carsDescription{
+    display: flex;
+    width: 25rem;
+    justify-content: space-between;
+}
+
+.carDescriptionLabel{
+    font-family: "Arial Narrow";
+    font-size: 1.5rem;
+    color: black;
+}
+
+.carBrandBlock{
+    grid-column: 2;
+    grid-row:    1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.carBrand,
+.carModel{
+    font-family: "Arial Narrow";
+    font-size: 2rem;
+    color: grey;
+}
+
+.carsDescriptionBlock{
+    grid-column: 3;
+    grid-row:    1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.yearOfIssue,
+.carsMileage,
+.carsDrive,
+.carsEngine,
+.carsEnginePower,
+.carsPrice{
+    font-family: "Arial Narrow";
+    font-size: 1.3rem;
+    color: grey;
+}
+
+.carDescriptionInput {
+    width: 13rem;
+    height: 1rem;
+    font-family: "Arial Narrow";
+    font-size: 1.3rem;
+}
+
+.carPrice{
+    grid-column: 3;
+    grid-row:    1;
+    display: flex;
+    margin: auto;
+    font-family: "Arial Narrow";
+    font-size: 2rem;
+    color: black;
+}
+
+.editСarSpecifications{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5rem;
+    width: 5rem;
+    font-family: "Arial Narrow";
+    font-size: 1rem;
+    background: grey;
+    color: white;
+    cursor: pointer;
+}
